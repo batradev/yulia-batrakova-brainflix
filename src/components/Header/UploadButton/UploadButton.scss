@@ -1,0 +1,11 @@
+@use '../../../styles/partials/variables' as *;
+@use '../../../styles/partials/mixins' as *;
+@use '../../../styles/partials/functions' as *;
+@use '../../../styles/partials/extends' as *;
+@use '../../../App.scss' as *;
+
+.header__button {
+    @extend %buttons-style;
+    margin-bottom: 0;
+    margin-top: 0;
+}

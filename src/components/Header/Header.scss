@@ -1,0 +1,13 @@
+
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/functions' as *;
+@use '../../styles/partials/extends' as *;
+@use '../../App.scss' as *;
+
+.header {
+    @extend %flex-column;
+    @include tablet {
+      @include flex-row;
+    }
+}
