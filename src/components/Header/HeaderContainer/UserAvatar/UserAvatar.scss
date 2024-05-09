@@ -1,0 +1,16 @@
+@use '../../../../styles/partials/variables' as *;
+@use '../../../../styles/partials/mixins' as *;
+@use '../../../../styles/partials/functions' as *;
+@use '../../../../styles/partials/extends' as *;
+@use '../../../../App.scss' as *;
+
+
+.avatar-container {
+    background-image: url("../../../../assets/images/Mohan-muruge.jpg");
+    background-size: cover;
+    background-position: left;
+    @extend %flex-column;
+    padding-left: 1rem;
+    @extend %avatar-style;
+    margin-top: to-rem(4);
+  }

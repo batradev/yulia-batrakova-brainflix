@@ -1,0 +1,35 @@
+@use '../../../styles/partials/variables' as *;
+@use '../../../styles/partials/mixins' as *;
+@use '../../../styles/partials/functions' as *;
+@use '../../../styles/partials/extends' as *;
+@use '../../../App.scss' as *;
+
+.header__logo {
+    @extend %flex-column;
+    padding-top: $padding-after-headlines;
+    padding-bottom: $padding-minimal;
+    justify-content: center;
+    align-items: center;
+   
+    @include tablet {
+    padding-left: $padding-for-tablets;
+    padding-right: $padding-for-tablets;
+    padding-top: $padding-before-headlines;
+    padding-bottom: $padding-before-headlines;
+    }
+    @include desktop {
+    padding-left: $padding-for-desktops;
+    padding-right: $avatar-mobile-width;
+    padding-top: $padding-for-tablets;
+    padding-bottom: $padding-for-tablets;
+    }
+    &-link {
+    &-img {
+        max-height: to-rem(20);
+        max-width: to-rem(120);
+        width: $image-width;
+    }
+    }
+}
+
+    

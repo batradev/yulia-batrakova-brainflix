@@ -1,0 +1,21 @@
+@use '../../../styles/partials/variables' as *;
+@use '../../../styles/partials/mixins' as *;
+@use '../../../styles/partials/functions' as *;
+@use '../../../styles/partials/extends' as *;
+@use '../../../App.scss' as *;
+
+
+.comments__container {
+    @extend %flex-row;
+    @extend %element-padding-style;
+    position: $position-for-comments;
+    @include tablet {
+      @include about-style;
+      padding-bottom: $padding-minimal;
+    }
+    @include desktop {
+      padding-left: $padding-for-desktops-comments;
+      padding-right: $padding-for-desktops-comments;
+    }
+  
+}

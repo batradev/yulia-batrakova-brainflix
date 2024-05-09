@@ -1,0 +1,31 @@
+@use './functions' as *;
+
+$font-weight-normal: 400;
+$font-weight-demi: 600;
+$font-weight-bold: 700;
+$font-family-avenir: "AvenirNextLTPro";
+$border-radius: to-rem(4);
+$padding-minimal: to-rem(8);
+$padding-before-headlines: to-rem(24);
+$padding-after-headlines: to-rem(16);
+$padding-for-tablets: to-rem(32);
+$avatar-mobile-width: to-rem(36);
+$avatar-tablet-width: to-rem(48);
+$padding-before-headlines-tablet: to-rem(48);
+$padding-for-desktops: to-rem(136);
+$padding-for-desktops-comments: to-rem(384);
+$image-width: 100%;
+$list-style-type: none;
+$text-decoration: none;
+$position-for-comments: relative;
+$flex-for-one: 1;
+
+$primary-text-dark-bg: #323232;
+$secondary-text-inactive-cta: #afafaf;
+$primary-text-light-bg-active-cta: #ffffff;
+$cta-hover: #000000;
+$divider-form-outline: #e1e1e1;
+$alternative-light-bg: #fafafa;
+$error-color: #d22d2d;
+$primary-blue: #0095FF;
+$secondary-dark-blue: #0065AD;
