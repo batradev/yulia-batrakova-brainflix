@@ -24,7 +24,7 @@
   %section-header-style {
     color: $primary-text-dark-bg;
     font-family: $font-family-avenir;
-    font-weight: $font-weight-demi;
+    font-weight: $font-weight-bold;
     font-size: to-rem(24);
     line-height: to-rem(32);
     @include tablet {
@@ -80,7 +80,7 @@
     }
   }
   %buttons-style {
-    height: to-rem(40);
+    height: to-rem(38);
     border-radius: $border-radius;
     width: $image-width;
     padding: 0 $padding-after-headlines;
@@ -89,7 +89,7 @@
     background-color: $primary-blue;
     font-family: $font-family-avenir;
     font-weight: $font-weight-demi;
-    font-size: to-rem(14);
+    font-size: to-rem(12);
     line-height: to-rem(20);
     @include tablet {
       padding: 0 $padding-for-tablets;
@@ -98,6 +98,8 @@
       margin-left: auto;
       margin-top: $padding-minimal;
       margin-bottom: $padding-after-headlines;
+      padding-left: to-rem(45); 
+      font-size: to-rem(12);
     }
     &:hover {
       background-color: $secondary-dark-blue;
@@ -117,6 +119,19 @@
     width: 92%;
     border-bottom: to-rem(1) solid $divider-form-outline;
     bottom: 0;
+    @include tablet {
+      width: 78%;
+    }
+    @include desktop {
+      width: 42%;
+    }
+  }
+  %divider-style-top {
+    content: "";
+    position: absolute;
+    width: 92%;
+    border-top: to-rem(1) solid $divider-form-outline;
+    top: 0;
     @include tablet {
       width: 78%;
     }

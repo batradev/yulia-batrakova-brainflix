@@ -2,7 +2,7 @@ import './UserAvatar.scss';
 
 function UserAvatar() {
     return (
-        <div className="avatar-container">
+        <div className="comments-container__avatar">
         </div>
       
     )

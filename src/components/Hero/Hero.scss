@@ -1,0 +1,13 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/functions' as *;
+@use '../../styles/partials/extends' as *;
+@use '../../App.scss' as *;
+
+.hero {
+    @extend %flex-column;
+    margin-top: 1rem;
+    @include tablet {
+      @include flex-row;
+    }
+}
