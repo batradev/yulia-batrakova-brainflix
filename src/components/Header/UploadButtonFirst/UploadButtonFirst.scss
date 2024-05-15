@@ -4,8 +4,17 @@
 @use '../../../styles/partials/extends' as *;
 @use '../../../App.scss' as *;
 
+.header__button-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
 .header__button {
     @extend %buttons-style;
     margin-bottom: 0;
     margin-top: 0;
+    padding-left: to-rem(40);
+    background-image: url('../../../assets/images/upload.svg');
+    background-repeat: no-repeat;
+    background-position: 12px 50%; 
+    background-size: to-rem(20); 
+}
 }

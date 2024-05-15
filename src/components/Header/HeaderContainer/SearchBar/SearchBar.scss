@@ -4,20 +4,20 @@
 @use '../../../../styles/partials/extends' as *;
 @use '../../../../App.scss' as *;
 
-.form-container{
+.search-container{
     width: 100%;
     padding-right: 1rem;
-.form {
+.search-container__form {
     @extend %flex-column;
     width: 100%;
-.form__field {
+.search-form__field {
     border: to-rem(1) solid $divider-form-outline;
     background-color: $alternative-light-bg;
     border-radius: $border-radius;
     padding: to-rem(9);
     padding-left: to-rem(40);
     margin-top: $border-radius;
-    margin-bottom: $padding-after-headlines;
+    // margin-bottom: $padding-after-headlines;
     min-height: $avatar-mobile-width;
     background-image: url('../../../../assets/images/search.svg');
     background-repeat: no-repeat;

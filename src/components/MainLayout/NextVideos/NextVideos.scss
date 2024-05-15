@@ -1,0 +1,18 @@
+@use '../../../styles/partials/variables' as *;
+@use '../../../styles/partials/mixins' as *;
+@use '../../../styles/partials/functions' as *;
+@use '../../../styles/partials/extends' as *;
+@use '../../../App.scss' as *;
+
+.next-videos {
+    @extend %flex-column;
+    @include tablet {
+      @include flex-row;
+    }
+    .video-list__item {
+        width: 40%;
+        .video-list__thumbnail {
+            width: 100%;
+        }
+    }
+}
