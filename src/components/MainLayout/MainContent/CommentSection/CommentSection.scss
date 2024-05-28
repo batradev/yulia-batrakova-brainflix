@@ -1,0 +1,25 @@
+@use "../../../../styles/partials/variables" as *;
+@use "../../../../styles/partials/mixins" as *;
+@use "../../../../styles/partials/functions" as *;
+@use "../../../../styles/partials/extends" as *;
+
+.comments {
+  @extend %flex-column;
+  &__count {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    color: $primary-text-dark-bg;
+    font-family: $font-family-avenir;
+    font-weight: $font-weight-demi;
+    font-size: to-rem(13);
+    line-height: to-rem(18);
+    @include tablet {
+      font-size: to-rem(14);
+      line-height: to-rem(22);
+      @include about-style;
+    }
+    @include desktop {
+      padding-left: $padding-for-desktops;
+    }
+  }
+}

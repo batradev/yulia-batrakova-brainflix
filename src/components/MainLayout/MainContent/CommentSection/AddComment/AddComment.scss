@@ -1,0 +1,47 @@
+@use "../../../../../styles/partials/variables" as *;
+@use "../../../../../styles/partials/mixins" as *;
+@use "../../../../../styles/partials/functions" as *;
+@use "../../../../../styles/partials/extends" as *;
+
+.comments__container {
+  @extend %flex-row;
+  @extend %element-padding-style;
+  position: $position-for-comments;
+  @include tablet {
+    @include about-style;
+    padding-bottom: $padding-minimal;
+  }
+  @include desktop {
+    padding-left: $padding-for-desktops;
+  }
+  &::after {
+    @extend %divider-style;
+  }
+
+  .form-container {
+    width: $image-width;
+    @extend %flex-column;
+    padding-left: $padding-after-headlines;
+
+    .form {
+      @extend %flex-column;
+      @include tablet {
+        @include flex-row;
+      }
+      .form__textarea-container {
+        @extend %flex-column;
+        flex: 5;
+      }
+
+      #comment {
+        height: to-rem(88);
+        min-width: to-rem(240);
+        padding: to-rem(12);
+        @include tablet {
+          height: to-rem(41);
+          max-width: 96%;
+        }
+      }
+    }
+  }
+}

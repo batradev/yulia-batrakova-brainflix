@@ -1,18 +1,39 @@
-@use '../../../styles/partials/variables' as *;
-@use '../../../styles/partials/mixins' as *;
-@use '../../../styles/partials/functions' as *;
-@use '../../../styles/partials/extends' as *;
-@use '../../../App.scss' as *;
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/functions" as *;
+@use "../../../styles/partials/extends" as *;
+@use "../../../App.scss" as *;
 
 .next-videos {
-    @extend %flex-column;
+  @extend %flex-column;
+  position: relative;
+  padding-bottom: to-rem(16);
+  @include desktop {
+    flex: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-left: to-rem(1) solid $divider-form-outline;
+    }
+  }
+
+  .next-videos__label {
+    @extend %labels-style;
+    font-size: to-rem(11);
+    @extend %element-padding-style;
+    padding-bottom: to-rem(14);
     @include tablet {
-      @include flex-row;
+      padding-left: to-rem(36);
+      padding-bottom: to-rem(24);
     }
-    .video-list__item {
-        width: 40%;
-        .video-list__thumbnail {
-            width: 100%;
-        }
+    @include desktop {
+      padding-bottom: to-rem(16);
+      padding-top: to-rem(32);
+      padding-left: to-rem(24);
     }
+  }
+  
 }

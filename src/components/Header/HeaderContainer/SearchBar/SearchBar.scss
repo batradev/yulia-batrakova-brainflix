@@ -1,48 +1,49 @@
-@use '../../../../styles/partials/variables' as *;
-@use '../../../../styles/partials/mixins' as *;
-@use '../../../../styles/partials/functions' as *;
-@use '../../../../styles/partials/extends' as *;
-@use '../../../../App.scss' as *;
+@use "../../../../styles/partials/variables" as *;
+@use "../../../../styles/partials/mixins" as *;
+@use "../../../../styles/partials/functions" as *;
+@use "../../../../styles/partials/extends" as *;
 
-.search-container{
-    width: 100%;
-    padding-right: 1rem;
-.search-container__form {
+.search-container {
+  width: 100%;
+  padding-right: 1rem;
+  @include tablet {
+    padding-right: to-rem(5);
+    margin-top: auto;
+  }
+  .search-container__form {
     @extend %flex-column;
     width: 100%;
-.search-form__field {
-    border: to-rem(1) solid $divider-form-outline;
-    background-color: $alternative-light-bg;
-    border-radius: $border-radius;
-    padding: to-rem(9);
-    padding-left: to-rem(40);
-    margin-top: $border-radius;
-    // margin-bottom: $padding-after-headlines;
-    min-height: $avatar-mobile-width;
-    background-image: url('../../../../assets/images/search.svg');
-    background-repeat: no-repeat;
-    background-position: 12px 50%; 
-    background-size: to-rem(16); 
-    @include tablet {
-      padding: $padding-after-headlines;
-      min-height: $avatar-tablet-width;
-      padding-left: to-rem(45); 
-    }
-    &::placeholder {
-      color: $cta-hover;
-      font-family: $font-family-avenir;
-      font-weight: $font-weight-normal;
-      font-size: to-rem(13);
-    }
-    &.error {
-      border-color: $error-color;
-    }
-    &:focus,
-    &:active,
-    &:focus-visible {
-      outline-color: $primary-text-dark-bg;
-      outline-width: to-rem(1);
+    .search-form__field {
+      border: to-rem(1) solid $divider-form-outline;
+      background-color: $alternative-light-bg;
+      border-radius: $border-radius;
+      padding: to-rem(9);
+      padding-left: to-rem(40);
+      margin-top: $border-radius;
+      min-height: $avatar-mobile-width;
+      background-image: url("../../../../assets/images/search.svg");
+      background-repeat: no-repeat;
+      background-position: 12px 50%;
+      background-size: to-rem(16);
+      @include tablet {
+        min-height: $avatar-tablet-width;
+        padding-left: to-rem(45);
+      }
+      &::placeholder {
+        color: $cta-hover;
+        font-family: $font-family-avenir;
+        font-weight: $font-weight-normal;
+        font-size: to-rem(13);
+      }
+      &.error {
+        border-color: $error-color;
+      }
+      &:focus,
+      &:active,
+      &:focus-visible {
+        outline-color: $primary-text-dark-bg;
+        outline-width: to-rem(1);
+      }
     }
   }
-}
 }
