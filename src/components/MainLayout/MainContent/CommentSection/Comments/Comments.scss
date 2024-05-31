@@ -3,10 +3,10 @@
 @use "../../../../../styles/partials/functions" as *;
 @use "../../../../../styles/partials/extends" as *;
 
-.video-info__title {
-  @extend %section-header-style;
-  @extend %header-padding-style;
+#comments__list {
+  @extend %flex-column;
+  padding-bottom: $padding-after-headlines;
   @include tablet {
-    padding-bottom: 0;
+    padding-bottom: to-rem(24);
   }
 }

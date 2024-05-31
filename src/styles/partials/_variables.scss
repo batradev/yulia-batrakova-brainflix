@@ -1,4 +1,4 @@
-@use './functions' as *;
+@use "./functions" as *;
 
 $font-weight-normal: 400;
 $font-weight-demi: 600;
@@ -8,9 +8,9 @@ $border-radius: to-rem(4);
 $padding-minimal: to-rem(8);
 $padding-before-headlines: to-rem(24);
 $padding-after-headlines: to-rem(16);
-$padding-for-tablets: to-rem(32);
+$padding-for-tablets: to-rem(36);
 $avatar-mobile-width: to-rem(36);
-$avatar-tablet-width: to-rem(48);
+$avatar-tablet-width: to-rem(40);
 $padding-before-headlines-tablet: to-rem(48);
 $padding-for-desktops: to-rem(136);
 $padding-for-desktops-comments: to-rem(384);
@@ -27,5 +27,5 @@ $cta-hover: #000000;
 $divider-form-outline: #e1e1e1;
 $alternative-light-bg: #fafafa;
 $error-color: #d22d2d;
-$primary-blue: #0095FF;
-$secondary-dark-blue: #0065AD;
+$primary-blue: #0095ff;
+$secondary-dark-blue: #0065ad;

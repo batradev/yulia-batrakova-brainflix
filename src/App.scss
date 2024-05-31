@@ -1,42 +1,13 @@
-@use './styles/partials/variables' as *;
-@use './styles/partials/mixins' as *;
-@use './styles/partials/functions' as *;
-@use './styles/partials/extends' as *;
-
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/functions" as *;
+@use "./styles/partials/extends" as *;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-@font-face {
+body {
   font-family: $font-family-avenir;
-  src: url("./assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"),
-    url("./assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"),
-    url("./assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
-    url("./assets/fonts/AvenirNextLTPro.ttf") format("truetype");
-  font-weight: $font-weight-normal;
-  font-style: normal;
 }
-
-@font-face {
-  font-family: $font-family-avenir;
-  src: url("./assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"),
-    url("./assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"),
-    url("./assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"),
-    url("./assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
-  font-weight: $font-weight-bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: $font-family-avenir;
-  src: url("./assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"),
-    url("./assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"),
-    url("./assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"),
-    url("./assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
-  font-weight: $font-weight-demi;
-  font-style: normal;
-}
-

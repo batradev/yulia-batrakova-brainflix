@@ -1,0 +1,99 @@
+@use "../../../../../styles/partials/variables" as *;
+@use "../../../../../styles/partials/mixins" as *;
+@use "../../../../../styles/partials/functions" as *;
+@use "../../../../../styles/partials/extends" as *;
+
+.video-info__user {
+  @extend %flex-row;
+  @extend %element-padding-style;
+  padding-top: 1rem;
+  position: $position-for-comments;
+  @include tablet {
+    @include tablet-padding-style;
+    padding-bottom: to-rem(6);
+  }
+  @include desktop {
+    padding-left: $padding-for-desktops;
+  }
+
+  .video-info__user--left {
+    @extend %flex-column;
+    flex: 3;
+    @include tablet {
+      @include flex-row;
+      flex: 7;
+    }
+    .user__name {
+      color: $primary-text-dark-bg;
+      font-family: $font-family-avenir;
+      font-weight: $font-weight-demi;
+      font-size: to-rem(13);
+      line-height: to-rem(18);
+      @include tablet {
+        font-size: to-rem(14);
+        line-height: to-rem(22);
+        align-items: center;
+        display: flex;
+      }
+    }
+
+    .user__date {
+      @extend %labels-style;
+      font-weight: $font-weight-normal;
+      font-size: to-rem(12);
+      padding-top: to-rem(10);
+      @include tablet {
+        align-items: center;
+        display: flex;
+        padding-top: 0;
+        padding-left: to-rem(36);
+      }
+    }
+  }
+  .video-info__user--right {
+    @extend %flex-column;
+    flex: 2;
+    @include tablet {
+      @include flex-row;
+    }
+    .user__view-count {
+      @extend %labels-style;
+      font-weight: $font-weight-normal;
+      font-size: to-rem(12);
+      align-items: center;
+      display: flex;
+
+      .view-count__icon {
+        width: to-rem(22);
+        height: to-rem(22);
+        margin-right: to-rem(8);
+      }
+    }
+    .user__like-count {
+      @extend %labels-style;
+      font-weight: $font-weight-normal;
+      font-size: to-rem(12);
+      padding-top: to-rem(10);
+      align-items: center;
+      display: flex;
+      @include tablet {
+        padding-top: 0;
+        padding-left: to-rem(36);
+      }
+
+      .like-count__icon {
+        width: to-rem(18);
+        height: to-rem(18);
+        margin-right: to-rem(8);
+      }
+    }
+  }
+  &::after {
+    @include divider-style;
+    @include divider-style-top;
+    @include tablet {
+      border-top: none;
+      top: none;
+    }
+  }
+}

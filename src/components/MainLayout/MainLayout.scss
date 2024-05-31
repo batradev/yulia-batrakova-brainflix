@@ -6,7 +6,7 @@
 
 .main-layout {
     @extend %flex-column;
-    @include tablet {
+    @include desktop {
       @include flex-row;
     }
 }

@@ -1,11 +1,10 @@
-import './UserAvatar.scss';
+import "./UserAvatar.scss";
 
-function UserAvatar() {
-    return (
-        <div className="comments-container__avatar">
-        </div>
-      
-    )
+function UserAvatar({ className }) {
+  const classNames =
+    className === "alternate" ? "alternate" : "comments-container__avatar";
+
+  return <div className={classNames}></div>;
 }
 
 export default UserAvatar;

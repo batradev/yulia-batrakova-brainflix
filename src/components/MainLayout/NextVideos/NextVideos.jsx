@@ -1,18 +1,21 @@
-import './NextVideos.scss';
+import "./NextVideos.scss";
+import VideoItem from "./VideoItem/VideoItem";
 
 function NextVideos({ videos, onVideoClick }) {
-    return (
-        <div className="next-videos">
-             {videos.map(video => (
-          <div key={video.id} className="video-list__item" onClick={() => onVideoClick(video.id)}>
-        <img src={video.image} alt="Thumbnail" className="video-list__thumbnail"/>
-        <div className="video-list__details">
-            <h3 className="video-list__title">{video.title}</h3>
-            <p className="video-list__username">{video.channel}</p>
-        </div>
-    </div>  ))}
-        </div> 
-    )
+  return (
+    <div className="next-videos">
+      <p className="next-videos__label">NEXT VIDEOS</p>
+      {videos.map((video) => (
+        <VideoItem
+          id={video.id}
+          image={video.image}
+          title={video.title}
+          channel={video.channel}
+          onVideoClick={onVideoClick}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default NextVideos;
