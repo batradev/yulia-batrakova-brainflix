@@ -41,7 +41,7 @@
       &:focus,
       &:active,
       &:focus-visible {
-        outline-color: $primary-text-dark-bg;
+        outline-color: $primary-blue;
         outline-width: to-rem(1);
       }
     }
