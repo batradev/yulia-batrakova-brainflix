@@ -1,0 +1,18 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/functions" as *;
+@use "../../styles/partials/extends" as *;
+
+.hero {
+  @extend %flex-column;
+  margin-top: 1rem;
+  .hero__video {
+    height: to-rem(182);
+    @include tablet {
+      height: to-rem(400);
+    }
+    @include desktop {
+      height: to-rem(508);
+    }
+  }
+}

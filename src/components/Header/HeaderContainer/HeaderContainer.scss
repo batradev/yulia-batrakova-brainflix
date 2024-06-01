@@ -1,0 +1,29 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/functions" as *;
+@use "../../../styles/partials/extends" as *;
+
+.header__container {
+  @extend %flex-row;
+  @extend %element-padding-style;
+  position: $position-for-comments;
+  @include tablet {
+    flex: 1;
+    @include about-style;
+    padding-bottom: 0;
+    padding-top: to-rem(8);
+  }
+  @include desktop {
+    padding-left: $padding-for-desktops-comments;
+    padding-right: $padding-for-desktops;
+  }
+  .header__button-container {
+    display: none;
+    @include tablet {
+      display: block;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      min-width: to-rem(165);
+    }
+  }
+}

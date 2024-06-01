@@ -1,0 +1,13 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/functions" as *;
+@use "../../../styles/partials/extends" as *;
+
+.main-content {
+  overflow-x: hidden;
+  @extend %flex-column;
+  @include desktop {
+    flex: 2;
+    padding-bottom: to-rem(56);
+  }
+}

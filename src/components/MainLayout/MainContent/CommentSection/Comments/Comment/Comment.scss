@@ -1,0 +1,60 @@
+@use "../../../../../../styles/partials/variables" as *;
+@use "../../../../../../styles/partials/mixins" as *;
+@use "../../../../../../styles/partials/functions" as *;
+@use "../../../../../../styles/partials/extends" as *;
+
+.comments-item {
+  @extend %flex-row;
+  @extend %element-padding-style;
+  padding-top: $padding-after-headlines;
+  position: $position-for-comments;
+  @include tablet {
+    @include about-style;
+    padding-top: $padding-before-headlines;
+    padding-bottom: $padding-before-headlines;
+  }
+  @include desktop {
+    padding-left: $padding-for-desktops;
+  }
+
+  &__avatar {
+    @extend %avatar-style;
+  }
+  &__container {
+    @extend %flex-column;
+    padding-left: $padding-after-headlines;
+    width: $image-width;
+    .comment__name-date {
+      @extend %flex-row;
+      padding-bottom: $padding-minimal;
+      .comment__container-name {
+        color: $primary-text-dark-bg;
+        font-family: $font-family-avenir;
+        font-weight: $font-weight-demi;
+        font-size: to-rem(13);
+        line-height: to-rem(18);
+        flex: 9;
+
+        @include tablet {
+          font-size: to-rem(14);
+          line-height: to-rem(22);
+        }
+      }
+      .comment__container-date {
+        @extend %labels-style;
+        font-weight: $font-weight-normal;
+        font-size: to-rem(12);
+        flex: 5;
+        text-align: right;
+      }
+    }
+    .comment__text {
+      @extend %copy-style;
+      padding: to-rem(0);
+    }
+  }
+
+  &::after {
+    @extend %divider-style;
+  }
+}

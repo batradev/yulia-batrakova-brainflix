@@ -1,0 +1,18 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/functions" as *;
+@use "../../styles/partials/extends" as *;
+
+.header {
+  @extend %flex-column;
+  @include tablet {
+    @include flex-row;
+  }
+  .header__buttonfirst-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @include tablet {
+      display: none;
+    }
+  }
+}

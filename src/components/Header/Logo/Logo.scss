@@ -1,0 +1,30 @@
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/functions" as *;
+@use "../../../styles/partials/extends" as *;
+
+.header__logo {
+  @extend %flex-column;
+  padding-top: $padding-after-headlines;
+  padding-bottom: $padding-minimal;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    padding-left: $padding-for-tablets;
+    padding-right: $padding-for-tablets;
+    padding-top: $padding-before-headlines;
+    padding-bottom: 0;
+  }
+  @include desktop {
+    padding-left: $padding-for-desktops;
+    padding-right: to-rem(117);
+  }
+  &-link {
+    &-img {
+      max-height: to-rem(25);
+      max-width: to-rem(120);
+      width: $image-width;
+    }
+  }
+}

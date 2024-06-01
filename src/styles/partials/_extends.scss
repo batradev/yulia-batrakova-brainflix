@@ -1,0 +1,147 @@
+@use "./variables" as *;
+@use "./functions" as *;
+@use "./mixins" as *;
+
+%header-padding-style {
+  padding-left: $padding-after-headlines;
+  padding-right: $padding-after-headlines;
+  padding-top: $padding-before-headlines;
+  padding-bottom: $padding-after-headlines;
+  @include tablet {
+    padding-left: $padding-for-tablets;
+    padding-right: $padding-for-tablets;
+    padding-top: $padding-before-headlines;
+    padding-bottom: $padding-for-tablets;
+  }
+  @include desktop {
+    padding-left: $padding-for-desktops;
+  }
+}
+%element-padding-style {
+  padding-top: to-rem(0);
+  padding-left: $padding-after-headlines;
+  padding-right: $padding-after-headlines;
+  padding-bottom: $padding-after-headlines;
+}
+%section-header-style {
+  color: $primary-text-dark-bg;
+  font-family: $font-family-avenir;
+  font-weight: $font-weight-bold;
+  font-size: to-rem(24);
+  line-height: to-rem(32);
+  @include tablet {
+    font-size: to-rem(33);
+    line-height: to-rem(44);
+  }
+}
+
+%subheader-style {
+  color: $primary-text-dark-bg;
+  font-family: $font-family-avenir;
+  font-size: to-rem(14);
+  line-height: to-rem(22);
+  font-weight: $font-weight-demi;
+  @include tablet {
+    font-size: to-rem(24);
+    line-height: to-rem(32);
+  }
+}
+%copy-quote-style {
+  color: $primary-text-dark-bg;
+  font-family: $font-family-avenir;
+  font-weight: $font-weight-demi;
+  font-size: to-rem(13);
+  line-height: to-rem(18);
+  @extend %element-padding-style;
+  @include tablet {
+    font-size: to-rem(14);
+    line-height: to-rem(22);
+    padding-top: to-rem(0);
+  }
+}
+%copy-style {
+  color: $primary-text-dark-bg;
+  font-family: $font-family-avenir;
+  font-weight: $font-weight-normal;
+  font-size: to-rem(13);
+  line-height: to-rem(18);
+  @extend %element-padding-style;
+  @include tablet {
+    font-size: to-rem(14);
+    line-height: to-rem(22);
+  }
+}
+%labels-style {
+  color: $secondary-text-inactive-cta;
+  font-family: $font-family-avenir;
+  font-weight: $font-weight-demi;
+  font-size: to-rem(12);
+  line-height: to-rem(20);
+  @include tablet {
+    font-size: to-rem(12);
+  }
+}
+%buttons-style {
+  height: to-rem(40);
+  border-radius: $border-radius;
+  width: $image-width;
+  padding: 0 $padding-after-headlines;
+  border: none;
+  color: $primary-text-light-bg-active-cta;
+  background-color: $primary-blue;
+  font-family: $font-family-avenir;
+  font-weight: $font-weight-demi;
+  font-size: to-rem(12);
+  line-height: to-rem(20);
+  @include tablet {
+    padding: 0 $padding-for-tablets;
+    min-width: to-rem(150);
+    max-width: to-rem(172);
+    margin-left: auto;
+    margin-top: $padding-minimal;
+    margin-bottom: $padding-after-headlines;
+    padding-left: to-rem(45);
+    font-size: to-rem(12);
+  }
+  &:hover {
+    background-color: $secondary-dark-blue;
+  }
+}
+%flex-row {
+  display: flex;
+  flex-direction: row;
+}
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+%divider-style {
+  content: "";
+  position: absolute;
+  width: 92%;
+  border-bottom: to-rem(1) solid $divider-form-outline;
+  bottom: 0;
+  @include tablet {
+    width: 91%;
+  }
+ 
+}
+%divider-style-top {
+  content: "";
+  position: absolute;
+  width: 92%;
+  border-top: to-rem(1) solid $divider-form-outline;
+  top: 0;
+ 
+}
+%avatar-style {
+  min-width: $avatar-mobile-width;
+  max-height: $avatar-mobile-width;
+  border-radius: 50%;
+  background-color: $divider-form-outline;
+  @include tablet {
+    max-width: $avatar-tablet-width;
+    min-width: $avatar-tablet-width;
+    max-height: $avatar-tablet-width;
+  }
+}

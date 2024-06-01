@@ -1,0 +1,43 @@
+@use "../../../../styles/partials/variables" as *;
+@use "../../../../styles/partials/mixins" as *;
+@use "../../../../styles/partials/functions" as *;
+@use "../../../../styles/partials/extends" as *;
+
+.header__button {
+  display: none;
+  @include tablet {
+    display: block;
+    @include buttons-style;
+    min-width: to-rem(165);
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: to-rem(40);
+    background-image: url("../../../../assets/images/upload.svg");
+    background-repeat: no-repeat;
+    background-position: 12px 50%;
+    background-size: to-rem(20);
+  }
+}
+
+.form__button {
+  @extend %buttons-style;
+  background-image: url("../../../../assets/images/add_comment.svg");
+  background-repeat: no-repeat;
+  background-position: 12px 50%;
+  background-size: to-rem(18);
+  @include tablet {
+    margin-top: to-rem(24);
+    height: to-rem(41);
+  }
+}
+
+.header__buttonfirst {
+  @extend %buttons-style;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: to-rem(40);
+  background-image: url("../../../../assets/images/upload.svg");
+  background-repeat: no-repeat;
+  background-position: 12px 50%;
+  background-size: to-rem(20);
+}

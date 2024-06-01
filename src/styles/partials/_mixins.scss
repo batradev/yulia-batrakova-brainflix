@@ -1,0 +1,98 @@
+@use "./variables" as *;
+@use "./functions" as *;
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin about-style {
+  padding-left: to-rem(36);
+  padding-right: to-rem(36);
+}
+@mixin about-style-desktop {
+  padding-left: to-rem(216);
+  padding-right: to-rem(216);
+}
+@mixin footer-padding-style {
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: to-rem(36);
+  padding-bottom: to-rem(24);
+}
+@mixin labels-style {
+  color: $secondary-text-inactive-cta;
+  font-family: $font-family-avenir;
+  font-weight: $font-weight-demi;
+  font-size: to-rem(10);
+  line-height: to-rem(20);
+  @include tablet {
+    font-size: to-rem(12);
+  }
+}
+@mixin tablet-padding-style {
+  padding-left: to-rem(36);
+  padding-right: to-rem(36);
+}
+@mixin buttons-style {
+  height: to-rem(40);
+  border-radius: $border-radius;
+  width: $image-width;
+  padding: 0 $padding-after-headlines;
+  border: none;
+  color: $primary-text-light-bg-active-cta;
+  background-color: $primary-blue;
+  font-family: $font-family-avenir;
+  font-weight: $font-weight-demi;
+  font-size: to-rem(12);
+  line-height: to-rem(20);
+  @include tablet {
+    padding: 0 $padding-for-tablets;
+    min-width: to-rem(150);
+    max-width: to-rem(172);
+    margin-left: auto;
+    margin-top: $padding-minimal;
+    margin-bottom: 0;
+    padding-left: to-rem(45);
+    font-size: to-rem(12);
+  }
+  &:hover {
+    background-color: $secondary-dark-blue;
+  }
+}
+
+@mixin divider-style {
+  content: "";
+  position: absolute;
+  width: 92%;
+  border-bottom: to-rem(1) solid $divider-form-outline;
+  bottom: 0;
+}
+
+@mixin divider-style-top {
+  content: "";
+  position: absolute;
+  width: 92%;
+  border-top: to-rem(1) solid $divider-form-outline;
+  top: 0;
+}

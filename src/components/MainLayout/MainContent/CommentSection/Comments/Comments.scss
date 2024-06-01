@@ -1,0 +1,12 @@
+@use "../../../../../styles/partials/variables" as *;
+@use "../../../../../styles/partials/mixins" as *;
+@use "../../../../../styles/partials/functions" as *;
+@use "../../../../../styles/partials/extends" as *;
+
+#comments__list {
+  @extend %flex-column;
+  padding-bottom: $padding-after-headlines;
+  @include tablet {
+    padding-bottom: to-rem(24);
+  }
+}
