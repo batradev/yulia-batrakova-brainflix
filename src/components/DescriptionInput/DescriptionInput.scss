@@ -1,0 +1,40 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/functions" as *;
+@use "../../styles/partials/extends" as *;
+
+.form__label {
+  @extend %labels-style;
+
+  font-size: to-rem(11);
+}
+.form__field {
+  border: to-rem(1) solid $divider-form-outline;
+  background-color: $alternative-light-bg;
+  border-radius: $border-radius;
+  padding: to-rem(12);
+  margin-top: $border-radius;
+  margin-bottom: $padding-after-headlines;
+  min-height: $avatar-mobile-width;
+  @include tablet {
+    padding: $padding-after-headlines;
+    min-height: to-rem(42);
+  }
+
+  &::placeholder {
+    color: $cta-hover;
+    font-family: $font-family-avenir;
+    font-weight: $font-weight-normal;
+    font-size: to-rem(13);
+  }
+  &.error {
+    border-color: $error-color;
+  }
+  &:focus,
+  &:active,
+  &:focus-visible {
+    outline-color: $primary-blue;
+    outline-width: to-rem(1);
+  }
+
+}
