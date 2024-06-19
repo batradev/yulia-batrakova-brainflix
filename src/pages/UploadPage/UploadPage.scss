@@ -1,0 +1,95 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/functions" as *;
+@use "../../styles/partials/extends" as *;
+
+.video-info__title-container {
+    position: relative;
+    margin-top: 1rem;
+    &::after {
+        @include divider-style-top;
+        width: 100%;
+
+      }
+    // @include tablet {
+    //     &::after {
+    //         @include divider-style;
+            
+    
+    //       }
+    // }
+}
+.form-container {
+    width: $image-width;
+    @extend %flex-column;
+    padding-left: $padding-after-headlines;
+
+    .form {
+      @extend %flex-column;
+      padding-right: 1rem;
+      @include tablet {
+        padding-left: 1.5rem;
+        padding-right: 2.25rem;
+        margin-top: 1.5rem;
+      }
+      @include desktop {
+        padding-left: 7.5rem;
+        padding-right: 6.25rem;
+      }
+      .video-info__main-container {
+        position: relative;
+        @include tablet {
+          padding-top: 1.5rem;
+          &::after {
+            @include divider-style-top;
+            @include divider-style;
+            width: 100%;
+    
+          }
+        }
+        @include desktop {
+         
+            @include flex-row;
+          
+        }
+      }
+   
+      .form__textarea-container {
+        @extend %flex-column;
+        flex: 5;
+        @include tablet {
+          padding-bottom: 0.5rem;
+        }
+      }
+      .form__buttons-container {
+        padding-top: 0.5rem;
+        @include tablet {
+        @include flex-row;
+      }
+       .cancel__button-container {
+        margin-top: 0.5rem;
+        margin-left: auto;
+       }
+        .cancel__buttonfirst-container {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            @include tablet {
+        display: none;
+      }
+        }
+      }
+
+      #big__field {
+        height: to-rem(88);
+        min-width: to-rem(240);
+        padding: to-rem(12);
+        // @include tablet {
+        //   height: to-rem(41);
+        //   max-width: 96%;
+        // }
+        @include desktop {
+          height: 4.4rem;
+        }
+      }
+    }
+  }
