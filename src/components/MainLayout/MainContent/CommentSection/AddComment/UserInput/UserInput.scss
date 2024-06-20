@@ -18,7 +18,7 @@
   min-height: $avatar-mobile-width;
   @include tablet {
     padding: $padding-after-headlines;
-    min-height: to-rem(42);
+    min-height: 2.5rem;
   }
 
   &::placeholder {
@@ -36,4 +36,13 @@
     outline-color: $primary-blue;
     outline-width: to-rem(1);
   }
+  // #comment {
+  //   height: to-rem(88);
+  //   min-width: to-rem(240);
+  //   padding: to-rem(12);
+  //   @include tablet {
+  //     height: to-rem(41);
+  //     max-width: 96%;
+  //   }
+  // }
 }

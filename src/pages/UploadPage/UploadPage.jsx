@@ -18,7 +18,7 @@ function UploadPage() {
     };
 
   return (
-    <>
+    <main>
  
     <div className="video-info__title-container">
     <VideoTitle title="Upload Video" />
@@ -60,7 +60,7 @@ function UploadPage() {
     </div>
 
 
-     </>
+     </main>
   );
 }
 

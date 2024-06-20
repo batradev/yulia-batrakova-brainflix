@@ -1,0 +1,18 @@
+
+@use "../../../../../../styles/partials/variables" as *;
+@use "../../../../../../styles/partials/mixins" as *;
+@use "../../../../../../styles/partials/functions" as *;
+@use "../../../../../../styles/partials/extends" as *;
+
+
+.form__button {
+    @extend %buttons-style;
+    background-image: url("../../../../../../assets/images/add_comment.svg");
+    background-repeat: no-repeat;
+    background-position: 12px 50%;
+    background-size: to-rem(18);
+    @include tablet {
+      margin-top: 0;
+      height: to-rem(41);
+    }
+  }

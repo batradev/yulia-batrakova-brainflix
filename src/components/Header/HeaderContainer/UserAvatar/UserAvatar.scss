@@ -27,4 +27,8 @@
   @extend %flex-column;
   @extend %avatar-style;
   margin-top: $padding-before-headlines;
+  @include tablet {
+    margin-top: 2.8rem;
+    
+  }
 }

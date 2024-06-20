@@ -8,7 +8,7 @@ function NextVideos({ videos }) {
     <div className="next-videos">
       <p className="next-videos__label">NEXT VIDEOS</p>
       {videos.map((video) => (
-        <Link key={video.id} to={`/video/${video.id}`}>
+        <Link key={video.id} to={`/video/${video.id}`} className="next-videos__link">
           <VideoItem
             id={video.id}
             image={video.image}

@@ -17,9 +17,11 @@
       font-size: to-rem(14);
       line-height: to-rem(22);
       @include about-style;
+      padding-bottom: 0;
     }
     @include desktop {
       padding-left: $padding-for-desktops;
+      padding-bottom: 0;
     }
   }
 }
