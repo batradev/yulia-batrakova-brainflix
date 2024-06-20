@@ -2,10 +2,10 @@ import "./MainLayout.scss";
 import MainContent from "./MainContent/MainContent";
 import NextVideos from "./NextVideos/NextVideos";
 
-function MainLayout({ mainVideoDetails, videos }) {
+function MainLayout({ mainVideoDetails, videos, videoId }) {
   return (
     <div className="main-layout">
-      <MainContent mainVideoDetails={mainVideoDetails} />
+      <MainContent mainVideoDetails={mainVideoDetails} videoId={videoId}/>
       <NextVideos videos={videos} />
      
     </div>

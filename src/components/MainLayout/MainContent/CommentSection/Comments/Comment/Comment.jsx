@@ -1,6 +1,6 @@
 import "./Comment.scss";
 
-function Comment({ id, name, timestamp, comment }) {
+function Comment({ id, name, timestamp, comment, onDelete }) {
   function timeSinceComment(commentDate) {
     const currentDate = new Date();
     const pastDate = new Date(commentDate);
@@ -46,6 +46,7 @@ function Comment({ id, name, timestamp, comment }) {
           </p>
         </div>
         <p className="comment__text">{comment}</p>
+        <button className="comment__delete-button" onClick={() => onDelete(id)}><div className="delete-icon"></div></button>
       </div>
     </div>
   );

@@ -61,13 +61,14 @@ function VideoPlayerPage({ videos }) {
   // }, [videoId]);
 
   return (
-    <>
+    <main>
       <Hero mainVideoDetails={mainVideoDetails} />
       <MainLayout
         mainVideoDetails={mainVideoDetails}
         videos={nextVideos}
+        videoId={videoId}
       />
-    </>
+    </main>
   );
 }
 
