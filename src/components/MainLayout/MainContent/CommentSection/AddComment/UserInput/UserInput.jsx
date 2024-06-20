@@ -1,27 +1,3 @@
-// import "./UserInput.scss";
-
-// function UserInput() {
-//   return (
-//     <>
-//        <label for="name" className="form__label">
-//         NAME
-//       </label>
-//       <input type="text" id="name" name="name" className="form__field" placeholder="Enter your name" />
-//       <label for="comment" className="form__label">
-//         JOIN THE CONVERSATION
-//       </label>
-//       <textarea
-//         id="comment"
-//         name="comment"
-//         className="form__field"
-//         placeholder="Add a new comment"
-//       ></textarea>
-//     </>
-//   );
-// }
-
-// export default UserInput;
-
 import "./UserInput.scss";
 
 function UserInput({ name, comment, onNameChange, onCommentChange }) {
@@ -56,3 +32,26 @@ function UserInput({ name, comment, onNameChange, onCommentChange }) {
 
 export default UserInput;
 
+// import "./UserInput.scss";
+
+// function UserInput() {
+//   return (
+//     <>
+//        <label for="name" className="form__label">
+//         NAME
+//       </label>
+//       <input type="text" id="name" name="name" className="form__field" placeholder="Enter your name" />
+//       <label for="comment" className="form__label">
+//         JOIN THE CONVERSATION
+//       </label>
+//       <textarea
+//         id="comment"
+//         name="comment"
+//         className="form__field"
+//         placeholder="Add a new comment"
+//       ></textarea>
+//     </>
+//   );
+// }
+
+// export default UserInput;

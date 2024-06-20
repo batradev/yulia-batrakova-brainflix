@@ -69,7 +69,6 @@
         filter: grayscale(100%) brightness(3.9);
         @extend %flex-column;
         margin-top: to-rem(1);
-        // margin-left: to-rem(8);
         @include tablet {
           height: to-rem(18);
           width: to-rem(14);
