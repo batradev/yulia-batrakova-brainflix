@@ -52,6 +52,34 @@
       @extend %copy-style;
       padding: to-rem(0);
     }
+    .comment__delete-button {
+      @extend %flex-row;
+      color: $divider-form-outline; 
+      background-color: $primary-text-light-bg-active-cta;
+      border-radius: $border-radius;
+      width: $image-width;
+      border: none;
+
+      .delete-icon {
+        margin-left: auto;
+        height: $padding-after-headlines;
+        width: to-rem(12);
+        background-image: url("../../../../../../assets/images/icon-delete.svg");
+        background-size: contain;
+        filter: grayscale(100%) brightness(3.9);
+        @extend %flex-column;
+        margin-top: to-rem(1);
+        @include tablet {
+          height: to-rem(18);
+          width: to-rem(14);
+        }
+        &:hover {
+          color: $cta-hover;
+          filter: grayscale(100%) brightness(1); 
+        }
+      }
+    
+    }
   }
 
   &::after {

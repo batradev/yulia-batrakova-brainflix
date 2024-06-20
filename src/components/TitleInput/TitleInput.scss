@@ -1,7 +1,7 @@
-@use "../../../../../../styles/partials/variables" as *;
-@use "../../../../../../styles/partials/mixins" as *;
-@use "../../../../../../styles/partials/functions" as *;
-@use "../../../../../../styles/partials/extends" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/functions" as *;
+@use "../../styles/partials/extends" as *;
 
 .form__label {
   @extend %labels-style;
@@ -18,7 +18,7 @@
   min-height: $avatar-mobile-width;
   @include tablet {
     padding: $padding-after-headlines;
-    min-height: 2.5rem;
+    min-height: to-rem(42);
   }
 
   &::placeholder {
@@ -36,5 +36,4 @@
     outline-color: $primary-blue;
     outline-width: to-rem(1);
   }
- 
 }

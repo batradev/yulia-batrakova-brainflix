@@ -26,7 +26,8 @@
     .form {
       @extend %flex-column;
       @include tablet {
-        @include flex-row;
+        padding-left: 0;
+        padding-right: 0;
       }
       .form__textarea-container {
         @extend %flex-column;
@@ -38,8 +39,8 @@
         min-width: to-rem(240);
         padding: to-rem(12);
         @include tablet {
-          height: to-rem(41);
-          max-width: 96%;
+          height: to-rem(80);
+          max-width: 100%;
         }
       }
     }

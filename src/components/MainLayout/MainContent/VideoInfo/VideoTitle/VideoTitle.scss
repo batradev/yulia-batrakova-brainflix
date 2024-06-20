@@ -8,5 +8,6 @@
   @extend %header-padding-style;
   @include tablet {
     padding-bottom: 0;
+    padding-top: 2.5rem;
   }
 }

@@ -35,5 +35,27 @@
       padding-left: to-rem(24);
     }
   }
+  .next-videos__link {
+    display: inline-block;
+    text-decoration: none;
+
+    .video-list__image-container {
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .video-list__thumbnail {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .video-list__details {
+    .video-list__title,
+    .video-list__username {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
   
 }

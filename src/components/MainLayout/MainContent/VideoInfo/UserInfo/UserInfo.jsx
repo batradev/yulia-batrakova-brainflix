@@ -11,11 +11,11 @@ function UserInfo({ channel, timestamp, views, likes }) {
       </div>
       <div className="video-info__user--right">
         <p className="user__view-count">
-          <img src={viewsIcon} alt="" className="view-count__icon" />
+          <img src={viewsIcon} alt="eye icon" className="view-count__icon" />
           {views}
         </p>
         <p className="user__like-count">
-          <img src={likesIcon} alt="" className="like-count__icon" />
+          <img src={likesIcon} alt="heart icon" className="like-count__icon" />
           {likes}
         </p>
       </div>
