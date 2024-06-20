@@ -2,7 +2,7 @@ import "./VideoItem.scss";
 
 function VideoItem({ id, image, title, channel }) {
   return (
-    <div key={id} className="video-list__item">
+    <li key={id} className="video-list__item">
       <div className="video-list__image-container">
         <img src={image} alt="Thumbnail" className="video-list__thumbnail" />
       </div>
@@ -10,7 +10,7 @@ function VideoItem({ id, image, title, channel }) {
         <h3 className="video-list__title">{title}</h3>
         <p className="video-list__username">{channel}</p>
       </div>
-    </div>
+    </li>
   );
 }
 
@@ -18,8 +18,8 @@ export default VideoItem;
 
 
 
-// import "./VideoItem.scss";
 
+// import "./VideoItem.scss";
 
 // function VideoItem({ id, image, title, channel, onVideoClick }) {
 //   return (
@@ -34,7 +34,5 @@ export default VideoItem;
 //     </div>
 //   );
 // }
-
-
 
 // export default VideoItem;

@@ -49,7 +49,6 @@
   background-position: 12px 50%;
   background-size: to-rem(18);
   @include tablet {
-    // margin-top: to-rem(24);
     height: to-rem(41);
     margin-top: 1.1rem;
     margin-left: 1rem;
@@ -80,9 +79,6 @@
   background-repeat: no-repeat;
   background-position: 12px 50%;
   background-size: to-rem(18);
-  // @include tablet {
-  //   margin-top: to-rem(24);
-  //   height: to-rem(41);
-  // }
+
   }
 }

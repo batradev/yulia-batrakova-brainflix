@@ -4,12 +4,12 @@ import VideoInfo from "./VideoInfo/VideoInfo";
 
 function MainContent({ mainVideoDetails, videoId }) {
   return (
-    <div className="main-content">
+    <article className="main-content">
       <div className="video-info">
         <VideoInfo mainVideoDetails={mainVideoDetails} />
       </div>
       <CommentSection mainVideoDetails={mainVideoDetails} videoId={videoId} />
-    </div>
+    </article>
   );
 }
 
