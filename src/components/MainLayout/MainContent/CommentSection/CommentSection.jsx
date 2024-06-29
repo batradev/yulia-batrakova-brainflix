@@ -4,13 +4,17 @@ import AddComment from "./AddComment/AddComment";
 import Comments from "./Comments/Comments";
 import "./CommentSection.scss";
 
+const apiPort = process.env.REACT_APP_API_PORT 
+
 function CommentSection({ videoId }) {
   const [comments, setComments] = useState([]);
+  let id = videoId;
 
   const fetchComments = async () => {
     try {
       const response = await axios.get(
-        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf`
+        // `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf`
+        `http://localhost:${apiPort}/api/videos/${id}`
       );
       const sortedComments = response.data.comments.sort((a, b) => {
         let dateA = new Date(a.timestamp);
@@ -29,10 +33,17 @@ function CommentSection({ videoId }) {
 
   const handleCommentDelete = async (commentId) => {
     try {
-      await axios.delete(
-        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}/comments/${commentId}?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf`
+      const response = await axios.delete(
+        // `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}/comments/${commentId}?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf`
+        `http://localhost:${apiPort}/api/videos/${id}/comments/${commentId}`,
       );
-      fetchComments();
+      // fetchComments();
+      const sortedComments = response.data.sort((a, b) => {
+        let dateA = new Date(a.timestamp);
+        let dateB = new Date(b.timestamp);
+        return dateB - dateA;
+      });
+      setComments(sortedComments);
     } catch (error) {
       console.error("Error deleting comment:", error);
     }
