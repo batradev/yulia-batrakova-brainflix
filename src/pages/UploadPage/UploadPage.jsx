@@ -5,14 +5,29 @@ import TitleInput from "../../components/TitleInput/TitleInput";
 import DescriptionInput from "../../components/DescriptionInput/DescriptionInput";
 import UploadButton from "../../components/Header/HeaderContainer/UploadButton/UploadButton";
 import VideoThumbnail from "../../components/VideoThumbnail/VideoThumbnail";
+import axios from 'axios';
 
 function UploadPage() {
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    alert("Upload successful");
-    navigate("/");
+    // alert("Upload successful");
+    // navigate("/");
+    const title = event.target.elements.title.value;
+    const description = event.target.elements.description.value;
+
+    try {
+      const response = await axios.post('http://localhost:8080/api/videos', {
+        title,
+        description,
+      });
+      alert("Upload successful");
+      navigate(`/video/${response.data.id}`);
+      // window.location.reload(); 
+    } catch (error) {
+      console.error("Error uploading video:", error);
+    }
   };
 
   return (

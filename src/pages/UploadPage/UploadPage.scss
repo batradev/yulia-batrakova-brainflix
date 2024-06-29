@@ -11,13 +11,7 @@
         width: 100%;
 
       }
-    // @include tablet {
-    //     &::after {
-    //         @include divider-style;
-            
-    
-    //       }
-    // }
+ 
 }
 .form-container {
     width: $image-width;
@@ -60,6 +54,8 @@
         @include tablet {
           padding-bottom: 0.5rem;
         }
+        position: relative; 
+        z-index: 1; 
       }
       .form__buttons-container {
         padding-top: 0.5rem;
@@ -79,17 +75,14 @@
         }
       }
 
-      #big__field {
-        height: to-rem(88);
-        min-width: to-rem(240);
-        padding: to-rem(12);
-        // @include tablet {
-        //   height: to-rem(41);
-        //   max-width: 96%;
-        // }
-        @include desktop {
-          height: 4.4rem;
-        }
-      }
+      // #big__field {
+      //   height: to-rem(88);
+      //   min-width: to-rem(240);
+      //   padding: to-rem(12);
+      
+      //   @include desktop {
+      //     height: 4.4rem;
+      //   }
+      // }
     }
   }
