@@ -28,30 +28,60 @@ function VideoPlayerPage({ videos, setVideos }) {
     }
   };
 
-  useEffect(() => {
-    const updateVideoDetails = async () => {
-      let videoDetails = videos.find((video) => video.id === videoId);
-      if (!videoDetails) {
-        videoDetails = await fetchVideoDetails(videoId);
-        // setVideos((prevVideos) => [...prevVideos, videoDetails]);
-          setVideos((prevVideos) => {
-            if (!prevVideos.find((video) => video.id === videoId)) {
-              return [...prevVideos, videoDetails];
-            }
-            return prevVideos;
-          });
-      
+  const updateVideoDetails = async () => {
+    let videoDetails = videos.find((video) => video.id === videoId);
+    
+    // if (!videoDetails) {
+    //   videoDetails = await fetchVideoDetails(videoId);
+    //   setVideos((prevVideos) => {
+    //     if (!prevVideos.find((video) => video.id === videoId)) {
+    //       return [...prevVideos, videoDetails];
+    //     }
+    //     return prevVideos;
+    //   });
+    // }
+    videoDetails = await fetchVideoDetails(videoId);
+    setVideos((prevVideos) => {
+      if (!prevVideos.find((video) => video.id === videoId)) {
+        return [...prevVideos, videoDetails];
       }
-      
-        setMainVideoDetails(videoDetails);
-        setNextVideos(videos.filter((video) => video.id !== videoId));
-      
-    };
+      return prevVideos;
+    });
 
+    setMainVideoDetails(videoDetails);
+    setNextVideos(videos.filter((video) => video.id !== videoId));
+  };
+
+  useEffect(() => {
     if (videoId) {
       updateVideoDetails();
     }
   }, [videoId, videos]);
+
+  // useEffect(() => {
+  //   const updateVideoDetails = async () => {
+  //     let videoDetails = videos.find((video) => video.id === videoId);
+  //     if (!videoDetails) {
+  //       videoDetails = await fetchVideoDetails(videoId);
+  //       // setVideos((prevVideos) => [...prevVideos, videoDetails]);
+  //         setVideos((prevVideos) => {
+  //           if (!prevVideos.find((video) => video.id === videoId)) {
+  //             return [...prevVideos, videoDetails];
+  //           }
+  //           return prevVideos;
+  //         });
+      
+  //     }
+      
+  //       setMainVideoDetails(videoDetails);
+  //       setNextVideos(videos.filter((video) => video.id !== videoId));
+      
+  //   };
+
+  //   if (videoId) {
+  //     updateVideoDetails();
+  //   }
+  // }, [videoId, videos]);
 
   if (!mainVideoDetails) {
     return <div>Loading...</div>;
@@ -97,6 +127,7 @@ function VideoPlayerPage({ videos, setVideos }) {
         mainVideoDetails={mainVideoDetails}
         videos={nextVideos}
         videoId={videoId}
+        refreshVideoDetails={updateVideoDetails}
       />
     </main>
   );
