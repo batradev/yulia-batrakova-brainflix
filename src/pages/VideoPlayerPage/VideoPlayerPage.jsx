@@ -19,7 +19,7 @@ function VideoPlayerPage({ videos, setVideos }) {
   const fetchVideoDetails = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:${apiPort}/api/videos/${id}`
+        `http://localhost:${apiPort}/videos/${id}`
       );
       return response.data;
     } catch (error) {

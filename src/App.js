@@ -18,7 +18,7 @@ function App() {
       try {
         const response = await axios.get(
           // "https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf"
-          `http://localhost:${apiPort}/api/videos`
+          `http://localhost:${apiPort}/videos`
         );
         setVideos(response.data);
       } catch (error) {
