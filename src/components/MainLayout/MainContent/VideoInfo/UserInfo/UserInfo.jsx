@@ -25,12 +25,22 @@ function UserInfo({ channel, timestamp, views, likes, videoId, refreshVideoDetai
 
     if (likedVideos[videoId]) {
       console.log('You have already liked this video');
+      try {
+        const response = await axios.delete(`http://localhost:${apiPort}/videos/${id}/likes`);
+       
+        refreshVideoDetails();
+        likedVideos[videoId] = false;
+        localStorage.setItem('likedVideos', JSON.stringify(likedVideos));
+        setIsLiked(false); 
+      } catch (error) {
+        console.error('Error liking the video', error);
+      }
       return;
     }
     
     try {
-      const response = await axios.put(`http://localhost:${apiPort}/api/videos/${id}/likes`);
-      // updateLikes(response.data);
+      const response = await axios.put(`http://localhost:${apiPort}/videos/${id}/likes`);
+     
       refreshVideoDetails();
       likedVideos[videoId] = true;
       localStorage.setItem('likedVideos', JSON.stringify(likedVideos));
@@ -50,12 +60,9 @@ function UserInfo({ channel, timestamp, views, likes, videoId, refreshVideoDetai
           <img src={viewsIcon} alt="eye icon" className="view-count__icon" />
           {views}
         </p>
-        {/* <p className="user__like-count">
-          <img src={likesIcon} alt="heart icon" className="like-count__icon" onClick={handleLike} />
-          {likes}
-        </p> */}
+       
         <p className={`user__like-count ${isLiked ? 'liked' : ''}`}>
-          <button className="like-button" onClick={handleLike} disabled={isLiked}>
+          <button className="like-button" onClick={handleLike} >
             <img src={likesIcon} alt="heart icon" className="like-count__icon" />
           </button>
           {likes}

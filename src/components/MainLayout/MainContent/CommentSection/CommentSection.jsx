@@ -14,7 +14,7 @@ function CommentSection({ videoId }) {
     try {
       const response = await axios.get(
         // `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf`
-        `http://localhost:${apiPort}/api/videos/${id}`
+        `http://localhost:${apiPort}/videos/${id}`
       );
       const sortedComments = response.data.comments.sort((a, b) => {
         let dateA = new Date(a.timestamp);
@@ -35,7 +35,7 @@ function CommentSection({ videoId }) {
     try {
       const response = await axios.delete(
         // `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}/comments/${commentId}?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf`
-        `http://localhost:${apiPort}/api/videos/${id}/comments/${commentId}`,
+        `http://localhost:${apiPort}/videos/${id}/comments/${commentId}`,
       );
       // fetchComments();
       const sortedComments = response.data.sort((a, b) => {

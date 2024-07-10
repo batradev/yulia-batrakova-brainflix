@@ -1,24 +1,23 @@
+
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/functions" as *;
 @use "../../styles/partials/extends" as *;
 
-
-
 .hero {
+  position: relative;
+  background-color: $cta-hover;
+  margin-top: 1rem;
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-top: 1rem;
-  background-color: $cta-hover;
 
-  .video-player {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  &__video {
     width: 100%;
-    max-width: to-rem(966);
+    height: 100%;
+    object-fit: contain;
+    max-width: to-rem(980);
+    align-items: center;
     margin: 0 auto;
 
     @include tablet {
@@ -28,170 +27,121 @@
     @include desktop {
       max-width: to-rem(966);
     }
+  }
 
-    &__video {
-      width: 100%;
-      height: auto;
+  &__controls {
+    position: absolute;
+    bottom: to-rem(10);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: to-rem(10);
+    border-radius: to-rem(10);
+    height: to-rem(16);
+
+    @include tablet {
+      height: to-rem(32);
     }
+  }
 
-    &__controls {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      height: to-rem(16);
-      margin-bottom: to-rem(12);
+  &__controls-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &-button {
+      .play-image {
+        height: to-rem(7);
+
+        @include tablet {
+          margin-top: to-rem(2);
+          height: to-rem(14);
+        }
+      }
+    }
+  }
+
+  &__scrubber-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__scrubber {
+    position: relative;
+    width: 100%;
+    height: to-rem(3.5);
+    background: $cta-hover;
+    border-radius: to-rem(8);
+  }
+
+  &__scrubber-buffer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $secondary-text-inactive-cta;
+  }
+
+  &__scrubber-played {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $primary-blue;
+  }
+
+  &__scrubber-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: to-rem(16);
+    height: to-rem(16);
+    background: $primary-text-light-bg-active-cta;
+    border-radius: 50%;
+  }
+
+  &__time {
+    color: $primary-text-light-bg-active-cta;
+    margin-left: to-rem(10);
+    font-size: to-rem(7);
+    width: to-rem(66);
+
+    @include tablet {
+      font-size: to-rem(10);
+    }
+  }
+
+  .hero__volume-range {
+    position: absolute;
+    bottom: 4.3rem;
+    left: 50%;
+    transform: translateX(-28%) rotate(-90deg);
+    width: to-rem(100);
+    opacity: 1;
+    cursor: pointer;
+    
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 to-rem(11);
+    cursor: pointer;
+
+    img {
+      width: to-rem(14);
+      height: to-rem(14);
 
       @include tablet {
-        height: to-rem(32);
-      }
-
-      .video-player__control {
-        display: flex;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.4);
-        padding: to-rem(10);
-        margin-right: to-rem(10);
-        height: 100%;
-
-        &.play-pause {
-          margin-left: to-rem(9);
-          border-radius: 0.25rem;
-
-          button {
-            background: none;
-            border: none;
-            cursor: pointer;
-
-            img {
-              width: to-rem(24);
-              height: to-rem(7);
-
-              @include tablet {
-                height: to-rem(14);
-              }
-            }
-          }
-        }
-
-        &.scrubber {
-          border-radius: 0.25rem;
-          flex: 1;
-          display: flex;
-          align-items: center;
-
-          input[type='range'] {
-            flex: 1;
-            -webkit-appearance: none;
-            appearance: none;
-            background: $cta-hover;
-            height: to-rem(3.5);
-            border-radius: to-rem(5);
-            outline: none;
-            margin-right: to-rem(10);
-          }
-
-          input[type='range']::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: to-rem(10);
-            height: to-rem(10);
-            background: $cta-hover;
-            border-radius: 50%;
-            cursor: pointer;
-          }
-
-          .video-player__time {
-            color: $primary-text-light-bg-active-cta;
-            font-size: to-rem(7);
-
-            @include tablet {
-              font-size: to-rem(10);
-            }
-          }
-        }
-
-        &.volume-fullscreen {
-          border-radius: 0.25rem;
-          display: flex;
-          align-items: center;
-
-          @include tablet {
-            margin-top: 0;
-          }
-          @include desktop {
-            margin-top: 0;
-          }
-
-          .video-player__volume-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            // z-index: 10;
-            height: to-rem(30);
-
-            .video-player__volume {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              margin-top: to-rem(6.5);
-              @include tablet {
-                margin-top: to-rem(2.5);
-              }
-
-              img {
-                margin-bottom: to-rem(3);
-                margin-left: to-rem(5);
-                height: to-rem(14);
-
-                @include tablet {
-                  height: to-rem(21);
-                }
-              }
-            }
-
-            input[type='range'] {
-              -webkit-appearance: slider-vertical;
-              width: to-rem(8);
-              height: to-rem(75);
-              background: $primary-text-light-bg-active-cta;
-              border-radius: to-rem(5);
-              outline: none;
-              position: absolute;
-              bottom: to-rem(30);
-              left: 50%;
-              transform: translateX(-50%) rotate(180deg);
-            }
-
-            input[type='range']::-webkit-slider-thumb {
-              -webkit-appearance: none;
-              appearance: none;
-              width: to-rem(10);
-              height: to-rem(10);
-              background: $cta-hover;
-              border-radius: 50%;
-              cursor: pointer;
-            }
-          }
-
-          button {
-            background: none;
-            border: none;
-            cursor: pointer;
-
-            img {
-              width: to-rem(24);
-              height: to-rem(10);
-
-              @include tablet {
-                height: to-rem(21);
-              }
-            }
-          }
-        }
+        width: to-rem(24);
+        height: to-rem(24);
       }
     }
   }

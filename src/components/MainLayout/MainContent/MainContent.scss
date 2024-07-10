@@ -4,7 +4,7 @@
 @use "../../../styles/partials/extends" as *;
 
 .main-content {
-  overflow-x: hidden;
+  // overflow-x: hidden;
   @extend %flex-column;
   @include desktop {
     flex: 2;

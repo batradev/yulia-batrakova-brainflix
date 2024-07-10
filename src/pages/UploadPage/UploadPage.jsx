@@ -6,29 +6,58 @@ import DescriptionInput from "../../components/DescriptionInput/DescriptionInput
 import UploadButton from "../../components/Header/HeaderContainer/UploadButton/UploadButton";
 import VideoThumbnail from "../../components/VideoThumbnail/VideoThumbnail";
 import axios from 'axios';
+import { useState } from 'react';
+import defaultImage from "../../assets/images/Upload-video-preview.jpg";
 
 function UploadPage() {
   const navigate = useNavigate();
+  const [image, setImage] = useState(null);
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+   
+  //   // navigate("/");
+  //   const title = event.target.elements.title.value;
+  //   const description = event.target.elements.description.value;
+
+  //   try {
+  //     const response = await axios.post('http://localhost:8080/api/videos', {
+  //       title,
+  //       description,
+  //     });
+  //     alert("Upload successful");
+  //     navigate(`/video/${response.data.id}`);
+      
+  //   } catch (error) {
+  //     console.error("Error uploading video:", error);
+  //   }
+  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // alert("Upload successful");
-    // navigate("/");
-    const title = event.target.elements.title.value;
-    const description = event.target.elements.description.value;
+    const formData = new FormData();
+    formData.append('title', event.target.elements.title.value);
+    formData.append('description', event.target.elements.description.value);
+    if (image) {
+      formData.append('image', image);
+    }
 
     try {
-      const response = await axios.post('http://localhost:8080/api/videos', {
-        title,
-        description,
+      const response = await axios.post('http://localhost:8080/videos', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
       });
       alert("Upload successful");
       navigate(`/video/${response.data.id}`);
-      // window.location.reload(); 
     } catch (error) {
       console.error("Error uploading video:", error);
     }
   };
+
+  const handleImageChange = (event) => {
+    setImage(event.target.files[0]);
+  };
+
 
   return (
     <main>
@@ -39,10 +68,12 @@ function UploadPage() {
       <div className="form-container">
         <form className="form" onSubmit={handleSubmit}>
           <div className="video-info__main-container">
-            <VideoThumbnail imageUrl="../../assets/images/Upload-video-preview.jpg" />
+            {/* <VideoThumbnail imageUrl="../../assets/images/Upload-video-preview.jpg" /> */}
+            <VideoThumbnail imageUrl={image ? URL.createObjectURL(image) : defaultImage} />
             <div className="form__textarea-container">
               <TitleInput />
               <DescriptionInput />
+              <input type="file" onChange={handleImageChange} />
             </div>
           </div>
 
