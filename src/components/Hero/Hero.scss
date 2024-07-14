@@ -1,18 +1,148 @@
+
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/functions" as *;
 @use "../../styles/partials/extends" as *;
 
 .hero {
-  @extend %flex-column;
+  position: relative;
+  background-color: $cta-hover;
   margin-top: 1rem;
-  .hero__video {
-    height: to-rem(182);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: to-rem(980);
+    align-items: center;
+    margin: 0 auto;
+
     @include tablet {
-      height: to-rem(400);
+      max-width: to-rem(790);
     }
+
     @include desktop {
-      height: to-rem(508);
+      max-width: to-rem(966);
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: to-rem(10);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: to-rem(10);
+    border-radius: to-rem(10);
+    height: to-rem(16);
+
+    @include tablet {
+      height: to-rem(32);
+    }
+  }
+
+  &__controls-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &-button {
+      .play-image {
+        height: to-rem(7);
+
+        @include tablet {
+          margin-top: to-rem(2);
+          height: to-rem(14);
+        }
+      }
+    }
+  }
+
+  &__scrubber-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__scrubber {
+    position: relative;
+    width: 100%;
+    height: to-rem(3.5);
+    background: $cta-hover;
+    border-radius: to-rem(8);
+  }
+
+  &__scrubber-buffer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $secondary-text-inactive-cta;
+  }
+
+  &__scrubber-played {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $primary-blue;
+  }
+
+  &__scrubber-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: to-rem(16);
+    height: to-rem(16);
+    background: $primary-text-light-bg-active-cta;
+    border-radius: 50%;
+  }
+
+  &__time {
+    color: $primary-text-light-bg-active-cta;
+    margin-left: to-rem(10);
+    font-size: to-rem(7);
+    width: to-rem(66);
+
+    @include tablet {
+      font-size: to-rem(10);
+    }
+  }
+
+  .hero__volume-range {
+    position: absolute;
+    bottom: 4.3rem;
+    left: 50%;
+    transform: translateX(-28%) rotate(-90deg);
+    width: to-rem(100);
+    opacity: 1;
+    cursor: pointer;
+    
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 to-rem(11);
+    cursor: pointer;
+
+    img {
+      width: to-rem(14);
+      height: to-rem(14);
+
+      @include tablet {
+        width: to-rem(24);
+        height: to-rem(24);
+      }
     }
   }
 }

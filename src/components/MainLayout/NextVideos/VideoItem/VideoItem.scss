@@ -12,6 +12,7 @@
     padding-bottom: to-rem(24);
   }
   @include desktop {
+    height: 5.5rem;
     padding-right: $padding-for-desktops;
     padding-left: to-rem(24);
   }
@@ -25,7 +26,8 @@
       width: 15%;
     }
     @include desktop {
-      width: 35%;
+     
+      width: 7rem;
     }
     .video-list__thumbnail {
       width: 100%;

@@ -1,7 +1,7 @@
 import "./VideoThumbnail.scss";
-import imageUrl from "../../assets/images/Upload-video-preview.jpg";
+import defaultImage from "../../assets/images/Upload-video-preview.jpg";
 
-function VideoThumbnail() {
+function VideoThumbnail({ imageUrl = defaultImage }) {
     return (
       <div className="thumbnail-img__container">
         <div className="form__label">VIDEO THUMBNAIL</div>

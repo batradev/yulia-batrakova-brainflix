@@ -5,15 +5,19 @@ import UserAvatar from "../../../../Header/HeaderContainer/UserAvatar/UserAvatar
 import CommentButton from "./CommentButton/CommentButton";
 import UserInput from "./UserInput/UserInput";
 
+const apiPort = process.env.REACT_APP_API_PORT 
+
 function AddComment({ videoId, onCommentAdded }) {
   const [comment, setComment] = useState("");
   const [name, setName] = useState("");
+  let id = videoId;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       await axios.post(
-        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}/comments?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf`,
+        // `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}/comments?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf`
+        `http://localhost:${apiPort}/videos/${id}/comments`,
         {
           name: name,
           comment: comment,
