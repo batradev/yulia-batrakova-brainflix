@@ -8,30 +8,12 @@ import VideoThumbnail from "../../components/VideoThumbnail/VideoThumbnail";
 import axios from 'axios';
 import { useState } from 'react';
 import defaultImage from "../../assets/images/Upload-video-preview.jpg";
+const apiPort = process.env.REACT_APP_API_PORT;
 
 function UploadPage() {
   const navigate = useNavigate();
   const [image, setImage] = useState(null);
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-   
-  //   // navigate("/");
-  //   const title = event.target.elements.title.value;
-  //   const description = event.target.elements.description.value;
-
-  //   try {
-  //     const response = await axios.post('http://localhost:8080/api/videos', {
-  //       title,
-  //       description,
-  //     });
-  //     alert("Upload successful");
-  //     navigate(`/video/${response.data.id}`);
-      
-  //   } catch (error) {
-  //     console.error("Error uploading video:", error);
-  //   }
-  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -42,7 +24,7 @@ function UploadPage() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/videos', formData, {
+      const response = await axios.post(`http://localhost:${apiPort}/videos`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -68,7 +50,7 @@ function UploadPage() {
       <div className="form-container">
         <form className="form" onSubmit={handleSubmit}>
           <div className="video-info__main-container">
-            {/* <VideoThumbnail imageUrl="../../assets/images/Upload-video-preview.jpg" /> */}
+           
             <VideoThumbnail imageUrl={image ? URL.createObjectURL(image) : defaultImage} />
             <div className="form__textarea-container">
               <TitleInput />
