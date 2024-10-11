@@ -54,7 +54,7 @@
     }
     .comment__delete-button {
       @extend %flex-row;
-      color: $divider-form-outline; 
+      color: $divider-form-outline;
       background-color: $primary-text-light-bg-active-cta;
       border-radius: $border-radius;
       width: $image-width;
@@ -75,10 +75,9 @@
         }
         &:hover {
           color: $cta-hover;
-          filter: grayscale(100%) brightness(1); 
+          filter: grayscale(100%) brightness(1);
         }
       }
-    
     }
   }
 

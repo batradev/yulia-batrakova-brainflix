@@ -8,7 +8,7 @@ import Header from "./components/Header/Header";
 import UploadPage from "./pages/UploadPage/UploadPage";
 import VideoPlayerPage from "./pages/VideoPlayerPage/VideoPlayerPage";
 
-const apiPort = process.env.REACT_APP_API_PORT 
+const apiPort = process.env.REACT_APP_API_PORT;
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -16,10 +16,7 @@ function App() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get(
-          // "https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf"
-          `http://localhost:${apiPort}/videos`
-        );
+        const response = await axios.get(`http://localhost:${apiPort}/videos`);
         setVideos(response.data);
       } catch (error) {
         console.error("Error fetching videos:", error);
@@ -33,7 +30,10 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<VideoPlayerPage videos={videos} setVideos={setVideos} />} />
+          <Route
+            path="/"
+            element={<VideoPlayerPage videos={videos} setVideos={setVideos} />}
+          />
           <Route path="/upload" element={<UploadPage />} />
           <Route
             path="/video/:videoId"
@@ -46,11 +46,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
 
 // import "./App.scss";
 // import "./styles/main.scss";

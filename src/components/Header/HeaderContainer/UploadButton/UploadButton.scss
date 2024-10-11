@@ -70,15 +70,14 @@
 .cancel__button {
   display: none;
   @include tablet {
-  display: block;
-  
-  @include buttons-style;
-  margin-top: 1.1rem;
-  color: $primary-blue;
-  background-color: $primary-text-light-bg-active-cta;
-  background-repeat: no-repeat;
-  background-position: 12px 50%;
-  background-size: to-rem(18);
+    display: block;
 
+    @include buttons-style;
+    margin-top: 1.1rem;
+    color: $primary-blue;
+    background-color: $primary-text-light-bg-active-cta;
+    background-repeat: no-repeat;
+    background-position: 12px 50%;
+    background-size: to-rem(18);
   }
 }

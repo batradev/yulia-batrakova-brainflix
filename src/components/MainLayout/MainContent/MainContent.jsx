@@ -6,7 +6,10 @@ function MainContent({ mainVideoDetails, videoId, refreshVideoDetails }) {
   return (
     <article className="main-content">
       <div className="video-info">
-        <VideoInfo mainVideoDetails={mainVideoDetails} refreshVideoDetails={refreshVideoDetails} />
+        <VideoInfo
+          mainVideoDetails={mainVideoDetails}
+          refreshVideoDetails={refreshVideoDetails}
+        />
       </div>
       <CommentSection mainVideoDetails={mainVideoDetails} videoId={videoId} />
     </article>

@@ -1,16 +1,23 @@
 import "./UserInfo.scss";
 import viewsIcon from "../../../../../assets/images/views.svg";
 import likesIcon from "../../../../../assets/images/likes.svg";
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-const apiPort = process.env.REACT_APP_API_PORT 
+const apiPort = process.env.REACT_APP_API_PORT;
 
 function getLikedVideos() {
-  return JSON.parse(localStorage.getItem('likedVideos')) || {};
+  return JSON.parse(localStorage.getItem("likedVideos")) || {};
 }
 
-function UserInfo({ channel, timestamp, views, likes, videoId, refreshVideoDetails }) {
+function UserInfo({
+  channel,
+  timestamp,
+  views,
+  likes,
+  videoId,
+  refreshVideoDetails,
+}) {
   let id = videoId;
   const [isLiked, setIsLiked] = useState(false);
 
@@ -19,34 +26,37 @@ function UserInfo({ channel, timestamp, views, likes, videoId, refreshVideoDetai
     setIsLiked(likedVideos[videoId]);
   }, [videoId]);
 
-  
   const handleLike = async () => {
     const likedVideos = getLikedVideos();
 
     if (likedVideos[videoId]) {
-      console.log('You have already liked this video');
+      console.log("You have already liked this video");
       try {
-        const response = await axios.delete(`http://localhost:${apiPort}/videos/${id}/likes`);
-       
+        const response = await axios.delete(
+          `http://localhost:${apiPort}/videos/${id}/likes`
+        );
+
         refreshVideoDetails();
         likedVideos[videoId] = false;
-        localStorage.setItem('likedVideos', JSON.stringify(likedVideos));
-        setIsLiked(false); 
+        localStorage.setItem("likedVideos", JSON.stringify(likedVideos));
+        setIsLiked(false);
       } catch (error) {
-        console.error('Error liking the video', error);
+        console.error("Error liking the video", error);
       }
       return;
     }
-    
+
     try {
-      const response = await axios.put(`http://localhost:${apiPort}/videos/${id}/likes`);
-     
+      const response = await axios.put(
+        `http://localhost:${apiPort}/videos/${id}/likes`
+      );
+
       refreshVideoDetails();
       likedVideos[videoId] = true;
-      localStorage.setItem('likedVideos', JSON.stringify(likedVideos));
-      setIsLiked(true); 
+      localStorage.setItem("likedVideos", JSON.stringify(likedVideos));
+      setIsLiked(true);
     } catch (error) {
-      console.error('Error liking the video', error);
+      console.error("Error liking the video", error);
     }
   };
   return (
@@ -60,10 +70,14 @@ function UserInfo({ channel, timestamp, views, likes, videoId, refreshVideoDetai
           <img src={viewsIcon} alt="eye icon" className="view-count__icon" />
           {views}
         </p>
-       
-        <p className={`user__like-count ${isLiked ? 'liked' : ''}`}>
-          <button className="like-button" onClick={handleLike} >
-            <img src={likesIcon} alt="heart icon" className="like-count__icon" />
+
+        <p className={`user__like-count ${isLiked ? "liked" : ""}`}>
+          <button className="like-button" onClick={handleLike}>
+            <img
+              src={likesIcon}
+              alt="heart icon"
+              className="like-count__icon"
+            />
           </button>
           {likes}
         </p>

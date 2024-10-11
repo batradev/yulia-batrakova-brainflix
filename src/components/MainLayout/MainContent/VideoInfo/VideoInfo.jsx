@@ -3,9 +3,7 @@ import VideoTitle from "./VideoTitle/VideoTitle";
 import UserInfo from "./UserInfo/UserInfo";
 import Description from "./Description/Description";
 
-
-function VideoInfo({ mainVideoDetails, refreshVideoDetails  }) {
-
+function VideoInfo({ mainVideoDetails, refreshVideoDetails }) {
   const videoDate = new Date(mainVideoDetails.timestamp);
 
   return (
