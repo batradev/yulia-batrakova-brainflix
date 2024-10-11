@@ -87,11 +87,11 @@
         margin-right: to-rem(8);
       }
       &.liked {
-        cursor: not-allowed; 
+        cursor: not-allowed;
         .like-count__icon {
-          filter: brightness(0.5); 
+          filter: brightness(0.5);
         }
-        color: $primary-text-dark-bg; 
+        color: $primary-text-dark-bg;
       }
       .like-button {
         background: none;
@@ -99,22 +99,21 @@
         cursor: pointer;
         padding: 0;
         z-index: 10;
-      
-        display: flex; 
+
+        display: flex;
         align-items: center;
-        
+
         &:focus {
           outline: none;
         }
-      
+
         &:hover .like-count__icon {
           transform: scale(1.1);
         }
-      
+
         .like-count__icon {
           transition: transform 0.2s;
         }
-      
       }
     }
   }

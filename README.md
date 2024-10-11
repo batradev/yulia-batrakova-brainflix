@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+This is the frontend for the BrainFlix project developed during the BrainStation bootcamp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Created by**: Yulia Batrakova
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+BrainFlix is a video streaming platform prototype developed with React. It simulates a real-world application, allowing users to view videos, upload new content, and interact with video details.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Responsive Design**: Fully responsive interface matching the provided mockups.
+- **Dynamic Routing**: Multi-page application using React Router DOM.
+- **API Integration**: Fetches video data from a custom backend API.
+- **Video Upload**: Users can upload new videos through a form.
+- **Like Functionality**: Users can like videos to interact and show appreciation for the content.
+- **Comment Management**: Users can add and delete comments on videos.
+- **State Management**: Utilizes React Hooks for managing state and lifecycle methods.
+- **Styling**: Styled with SASS and follows BEM methodology for class naming.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- React
+- React Router DOM
+- Axios
+- Flexbox
+- SASS
+- JavaScript
+- HTML 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation and Setup
 
-### `npm run build`
+1. **Clone the Repository**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone git@github.com:batradev/yulia-batrakova-brainflix.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Navigate to the Project Directory**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd yulia-batrakova-brainflix
+```
 
-### `npm run eject`
+3. **Install Dependencies**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Start the Application**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
+The application will run at http://localhost:3000.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Prerequisites
+Ensure the BrainFlix Backend server is running.
+Node.js and npm should be installed on your machine.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## API Configuration
+The frontend communicates with the backend API running at http://localhost:8080. If your backend server is running on a different port or URL, update the API base URL accordingly in your frontend code.

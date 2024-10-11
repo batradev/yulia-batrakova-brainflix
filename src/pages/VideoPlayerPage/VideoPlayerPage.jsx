@@ -49,11 +49,10 @@ function VideoPlayerPage({ videos, setVideos }) {
     }
   }, [videoId, videos]);
 
-
- if (!mainVideoDetails) {
+  if (!mainVideoDetails) {
     return <div>Loading...</div>;
   }
-  
+
   return (
     <main>
       <Hero mainVideoDetails={mainVideoDetails} />
@@ -68,51 +67,3 @@ function VideoPlayerPage({ videos, setVideos }) {
 }
 
 export default VideoPlayerPage;
-
-
-
-
-
-// BEFORE API
-// if (!videoId && videos) {
-//   videoId = videos[0].id
-// }
-
-// const findVideoDetails = () => {
-//   return videoDetails.find(
-//     (video) => video.id === videoId
-//   );
-// }
-
-// const findNextVideos = () => {
-//   return videos.filter((video) => video.id !== videoId);
-// }
-
-// const [mainVideoDetails, setMainVideoDetails] = useState(findVideoDetails());
-// const [nextVideos, setNextVideos] = useState(findNextVideos());
-
-// useEffect(() => {
-//   if (videoId) {
-//     setMainVideoDetails(findVideoDetails());
-//     setNextVideos(findNextVideos());
-//   }
-// }, [videoId]);
-
-// BEFORE ID
-// import Hero from '../../components/Hero/Hero';
-// import MainLayout from '../../components/MainLayout/MainLayout';
-
-// function VideoPlayerPage({ mainVideoDetails, videos, handleVideoSelection }) {
-//   return (
-//     <>
-//       <Hero mainVideoDetails={mainVideoDetails} />
-//       <MainLayout
-//         mainVideoDetails={mainVideoDetails}
-//         videos={videos}
-//         handleVideoSelection={handleVideoSelection}
-//       />
-//     </>
-//   );
-// }
-
-// export default VideoPlayerPage;
