@@ -16,6 +16,8 @@ function Hero({ mainVideoDetails }) {
   const [buffered, setBuffered] = useState(0);
   const [showVolumeControl, setShowVolumeControl] = useState(false);
 
+  const apiKey = process.env.REACT_APP_API_KEY;
+
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -105,10 +107,7 @@ function Hero({ mainVideoDetails }) {
         className="hero__video"
         ref={videoRef}
         poster={mainVideoDetails.image}
-        src={
-          mainVideoDetails.video +
-          "?api_key=cbdf096d-46fe-4e06-8496-641c06f1cedf"
-        }
+        src={`${mainVideoDetails.video}?api_key=${apiKey}`}
       />
 
       <div className="hero__controls">
